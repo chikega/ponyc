@@ -22,9 +22,9 @@ task:
       TRIPLE_OS: linux-gnu
   - name: "PR: x86-64-unknown-linux-ubuntu18.04"
     container:
-      image: ponylang/ponyc-ci-x86-64-unknown-linux-ubuntu18.04-builder:20200507
+      image: ponylang/ponyc-ci-x86-64-unknown-linux-ubuntu18.04-builder:20210427
     environment:
-      CACHE_BUSTER: 20210224
+      CACHE_BUSTER: 20210427
       TRIPLE_VENDOR: unknown
       TRIPLE_OS: linux-ubuntu18.04
   - name: "PR: x86-64-unknown-linux-ubuntu20.04"
@@ -36,7 +36,7 @@ task:
       TRIPLE_OS: linux-ubuntu20.04
   - name: "PR: x86-64-unknown-linux-musl"
     container:
-      image: ponylang/ponyc-ci-x86-64-unknown-linux-musl-builder:20200421
+      image: ponylang/ponyc-ci-x86-64-unknown-linux-musl-builder:20210420
     environment:
       CACHE_BUSTER: 20210224
       TRIPLE_VENDOR: unknown
@@ -136,12 +136,14 @@ task:
   only_if: $CIRRUS_PR != ''
 
   windows_container:
-    image: ponylang/ponyc-ci-x86-64-pc-windows-msvc-builder:20201208
+    image: ponylang/ponyc-ci-x86-64-pc-windows-msvc-builder:20210427
     os_version: 2019
     cpu: 8
     memory: 24
 
   name: "PR: x86-64-pc-windows-msvc"
+
+  timeout_in: 120m
 
   libs_cache:
     folder: build/libs
@@ -161,7 +163,7 @@ task:
   only_if: $CIRRUS_PR != ''
 
   windows_container:
-    image: ponylang/ponyc-ci-x86-64-pc-windows-msvc-builder:20201208
+    image: ponylang/ponyc-ci-x86-64-pc-windows-msvc-builder:20210427
     os_version: 2019
     cpu: 8
     memory: 24
@@ -261,9 +263,9 @@ task:
         TRIPLE_OS: linux-gnu
     - name: "nightly: x86-64-unknown-linux-ubuntu18.04"
       container:
-        image: ponylang/ponyc-ci-x86-64-unknown-linux-ubuntu18.04-builder:20200507
+        image: ponylang/ponyc-ci-x86-64-unknown-linux-ubuntu18.04-builder:20210427
       environment:
-        CACHE_BUSTER: 20210224
+        CACHE_BUSTER: 20210427
         TRIPLE_VENDOR: unknown
         TRIPLE_OS: linux-ubuntu18.04
     - name: "nightly: x86-64-unknown-linux-ubuntu20.04"
@@ -275,7 +277,7 @@ task:
         TRIPLE_OS: linux-ubuntu20.04
     - name: "nightly: x86-64-unknown-linux-musl"
       container:
-        image: ponylang/ponyc-ci-x86-64-unknown-linux-musl-builder:20200421
+        image: ponylang/ponyc-ci-x86-64-unknown-linux-musl-builder:20210420
       environment:
         CACHE_BUSTER: 20210224
         TRIPLE_VENDOR: unknown
@@ -407,9 +409,9 @@ task:
         TRIPLE_OS: linux-gnu
     - name: "release: x86-64-unknown-linux-ubuntu18.04"
       container:
-        image: ponylang/ponyc-ci-x86-64-unknown-linux-ubuntu18.04-builder:20200507
+        image: ponylang/ponyc-ci-x86-64-unknown-linux-ubuntu18.04-builder:20210427
       environment:
-        CACHE_BUSTER: 20200507
+        CACHE_BUSTER: 20210427
         TRIPLE_VENDOR: unknown
         TRIPLE_OS: linux-ubuntu18.04
     - name: "release: x86-64-unknown-linux-ubuntu20.04"
@@ -421,7 +423,7 @@ task:
         TRIPLE_OS: linux-ubuntu20.04
     - name: "release: x86-64-unknown-linux-musl"
       container:
-        image: ponylang/ponyc-ci-x86-64-unknown-linux-musl-builder:20200421
+        image: ponylang/ponyc-ci-x86-64-unknown-linux-musl-builder:20210420
       environment:
         CACHE_BUSTER: 20200421
         TRIPLE_VENDOR: unknown
