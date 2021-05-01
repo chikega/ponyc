@@ -136,7 +136,7 @@ task:
   only_if: $CIRRUS_PR != ''
 
   windows_container:
-    image: ponylang/ponyc-ci-x86-64-pc-windows-msvc-builder:20210427
+    image: ponylang/ponyc-ci-x86-64-pc-windows-msvc-builder:20210430
     os_version: 2019
     cpu: 8
     memory: 24
@@ -148,7 +148,7 @@ task:
   libs_cache:
     folder: build/libs
     fingerprint_script:
-      - ps: (Get-FileHash -Path lib\CMakeLists.txt).Hash + "Windows 20201208"
+      - ps: (Get-FileHash -Path lib\CMakeLists.txt).Hash + "Windows 20210430"
     populate_script:
       - ps: .\make.ps1 -Command libs -Generator "Visual Studio 16 2019"
 
@@ -163,7 +163,7 @@ task:
   only_if: $CIRRUS_PR != ''
 
   windows_container:
-    image: ponylang/ponyc-ci-x86-64-pc-windows-msvc-builder:20210427
+    image: ponylang/ponyc-ci-x86-64-pc-windows-msvc-builder:20210430
     os_version: 2019
     cpu: 8
     memory: 24
@@ -175,7 +175,7 @@ task:
   libs_cache:
     folder: build/libs
     fingerprint_script:
-      - ps: (Get-FileHash -Path lib\CMakeLists.txt).Hash + "Windows 20201208"
+      - ps: (Get-FileHash -Path lib\CMakeLists.txt).Hash + "Windows 20210430"
     populate_script:
       - ps: .\make.ps1 -Command libs -Generator "Visual Studio 16 2019"
 
@@ -357,7 +357,7 @@ task:
   only_if: $CIRRUS_CRON == "nightly"
 
   windows_container:
-    image: ponylang/ponyc-ci-x86-64-pc-windows-msvc-builder:20201208
+    image: ponylang/ponyc-ci-x86-64-pc-windows-msvc-builder:20210430
     os_version: 2019
     cpu: 8
     memory: 24
@@ -370,7 +370,7 @@ task:
   libs_cache:
     folder: build/libs
     fingerprint_script:
-      - ps: (Get-FileHash -Path lib\CMakeLists.txt).Hash + "Windows 20201208"
+      - ps: (Get-FileHash -Path lib\CMakeLists.txt).Hash + "Windows 20210430"
     populate_script:
       - ps: .\make.ps1 -Command libs -Generator "Visual Studio 16 2019"
 
@@ -503,7 +503,7 @@ task:
   only_if: $CIRRUS_TAG =~ '^\d+\.\d+\.\d+$'
 
   windows_container:
-    image: ponylang/ponyc-ci-x86-64-pc-windows-msvc-builder:20201208
+    image: ponylang/ponyc-ci-x86-64-pc-windows-msvc-builder:20210430
     os_version: 2019
     cpu: 8
     memory: 24
@@ -516,7 +516,7 @@ task:
   libs_cache:
     folder: build/libs
     fingerprint_script:
-      - ps: (Get-FileHash -Path lib\CMakeLists.txt).Hash + "Windows 20201208"
+      - ps: (Get-FileHash -Path lib\CMakeLists.txt).Hash + "Windows 20210430"
     populate_script:
       - ps: .\make.ps1 -Command libs -Generator "Visual Studio 16 2019"
 
